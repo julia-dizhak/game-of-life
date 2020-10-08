@@ -28,21 +28,21 @@ The Game of Life has this name because of Conway's genetic laws, rules which cel
 _In my implementation cell = 0 means death, cell = 1 means life_
 
 The rules are: 
-* the cell = 0 becomes 1 (a live) when it has 3 life neighbours, otherwise it stays 0;
-* the cell = 1 dies when it has less than 2 lives (underpopulation) and greater than 3 lives (overpopulation), otherwise it stays 1;
+* the cell = 0 becomes 1 (a live) when it has 3 life neighbours, otherwise it stays 0
+* the cell = 1 dies when it has less than 2 lives (underpopulation) and greater than 3 lives (overpopulation), otherwise it stays 1
 
-So reproduction happens with exactly 3 neighbors, death happens with < 2, > 3 neighbours;
+So reproduction happens with exactly 3 neighbors, death happens with < 2, > 3 neighbours
 
 ## Implementation details
 
-* Step 1 Starter code
+* **Step** 1 Starter code
 Initial state: first I need to create a 2 dimensional array that stores a random collection of 1 and 0.
 
-* Step 2 Display a grid
+* **Step 2** Display a grid
 Display a grid on the UI site (could be white and black squares).
 I can draw grid by canvas or by just DOM elements (test performance)
 
-* Step 3 Implement a rules
+* **Step 3** Implement rules
 I need to implement a mechanism (based on rules) of how cells should change after one time frame iteration. 
 The idea to keep 2 states old (previous) and new one (next state) for each cell. 
 And based on the previous state of the cell itself and his 8 neighbors state, update state if it's needed or stay like it was (need to think about performance).

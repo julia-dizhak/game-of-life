@@ -2,8 +2,12 @@
   "name": "game-of-life",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://julia-dizhak.github.io/game-of-life/",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^16.13.1",

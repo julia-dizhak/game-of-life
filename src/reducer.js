@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-function hello(state = 'Conways Game of Life') {
+function hello(state = 'hello ') {
   return state;
 }
 

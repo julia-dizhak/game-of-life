@@ -4,7 +4,10 @@ import './App.css';
 
 function App(props) {
   return (
-    <div>{props.hello}</div>
+    <>
+      <h1>Conway's Game of Life</h1>
+      <div>{props.hello}</div>
+    </>
   );
 }
 
