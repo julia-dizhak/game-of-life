@@ -3,6 +3,9 @@
 
 > Archlet fullstack developer coding challenge.
 
+## Demo
+Hosted on GitHub Pages, [demo](https://julia-dizhak.github.io/game-of-life/)
+
 ## The Challenge
 
 Write a simple version of the [game of life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) with the stack ES6+JSX, React and Redux.
