@@ -5,6 +5,10 @@ import {
   SPEED
 } from '../config';
 
+// action types
+export const BOOTSTRAP_APP = 'BOOTSTRAP_APP';
+export const INIT_NEW_GENERATION = 'INIT_NEW_GENERATION';
+
 const initState = {
   gridState: [],
   rows: ROWS,
@@ -18,11 +22,18 @@ export default function reducer(state = initState, action) {
   const initGridState = make2DArray(ROWS, COLS);
 
   switch (action.type) {
-    case 'BOOTSTRAP_APP':
+    case BOOTSTRAP_APP:
       return {
         ...state,
         gridState: initGridState
       }
+    
+    case INIT_NEW_GENERATION:
+      return {
+        ...state, 
+        generation: 0,
+        gridState: initGridState
+      };   
   
     default:
       break;
