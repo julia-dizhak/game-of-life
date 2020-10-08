@@ -20,10 +20,6 @@ function make2DArray(rows, cols, fill = () => Math.random() < 0.3) {
   return arr;
 }
 
-// tests
-const testArr = make2DArray(2,2);
-console.log('testArr', testArr);
-
 export {
   make2DArray
 }

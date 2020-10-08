@@ -1,7 +1,11 @@
 import React from 'react';
+import uuid1 from 'uuid/v1';
+
 import { Square } from './Square';
 
-// build a grid via rows and cols
+/* 
+  build a grid via rows and cols
+*/
 const Grid = ({gridState}) => {
   let rows = [];
   const r = gridState.length;
@@ -12,14 +16,14 @@ const Grid = ({gridState}) => {
     for (let j = 0; j < c; j++) {
       cols.push(
         <Square 
-          key={`${r},${c}`}
-          className={gridState[i][j] ? 'alive' : 'dead'}
+          key={uuid1() + `${r},${c}`}
+          className={`col ${gridState[i][j] ? 'alive' : 'dead'}`}
         />
       )
     }
     rows.push(
       <div 
-        key={r}
+        key={uuid1() + `${r}`}
         className="row"
         >
           {cols}
