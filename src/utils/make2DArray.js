@@ -4,7 +4,7 @@
  * @param {number} rows 
  * @param {number} cols 
  * @param {function} fill 
- * @return {[[]]} arr
+ * @return {[[]]} 
  */
 function make2DArray(rows, cols, fill = () => Math.random() < 0.3) {
   let arr = [];

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 
-import { BOOTSTRAP_APP, INIT_NEW_GENERATION } from './store/reducer';
+import { 
+  BOOTSTRAP_APP, 
+  INIT_NEW_GENERATION, HANDLE_NEXT_GENERATION } from './store/reducer';
 import { Grid } from './components/Grid'
 import './game.css';
 
@@ -31,13 +33,19 @@ function Game(props) {
         <p>{`Generation: ${generation}`}</p>
         <button type="button">stop</button>
         <button type="button">start</button>
-        <button type="button">New generation in one step</button>
+
+        <button 
+          type="button" 
+          disabled={isRunning} 
+          onClick={() => dispatch({type: HANDLE_NEXT_GENERATION})}>
+            Next generation in one step
+        </button>
         
         <button 
           type="button" 
           disabled={isRunning} 
           onClick={() => dispatch({type: INIT_NEW_GENERATION})}>
-            init new generation
+            Init new generation
         </button>
       </div>
     </div>
