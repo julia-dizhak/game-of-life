@@ -1,3 +1,5 @@
+import { make2DArray } from '../utils/make2DArray';
+
 import {
   ROWS, COLS,
   SPEED
@@ -13,6 +15,19 @@ const initState = {
 }
 
 export default function reducer(state = initState, action) {
+  const initGridState = make2DArray(ROWS, COLS);
+
+  switch (action.type) {
+    case 'BOOTSTRAP_APP':
+      return {
+        ...state,
+        gridState: initGridState
+      }
   
+    default:
+      break;
+  }
+
+
   return state;
 }

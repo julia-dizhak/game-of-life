@@ -24,8 +24,35 @@ body {
   margin: 0 0 30px 0;
 }
 
+/*
+Styles for grid
+*/
 .grid {
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   border: 1px solid #ccc;
+}
+
+.row {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 20px;
+  width: 100%;
+}
+
+.col {
+  flex-direction: column;
+  height: 10px;
+  width: calc(100% / 10);
+  height: calc(100%);
+  box-shadow: 0 0 0 0.1px #000 inset;
+}
+
+.alive {
+  background-color: #fff;
+}
+
+.dead {
+  background-color: #483636;
 }

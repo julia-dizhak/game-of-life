@@ -1,5 +1,6 @@
-import React from 'react';
-import { connect, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
+
 
 import { Grid } from './components/Grid'
 import './game.css';
@@ -7,8 +8,11 @@ import './game.css';
 function Game(props) {
   // todo optimize useSelector
   const gridState = useSelector(state => state.gridState);
-  const rows = useSelector(state => state.rows);
-  const cols = useSelector(state => state.cols);
+
+  const dispatch = useDispatch();
+  useEffect(()=> {
+    dispatch({type: 'BOOTSTRAP_APP'})
+  }, []);
 
   return (
     <div className="container">
@@ -17,8 +21,6 @@ function Game(props) {
       {gridState.length > 0 ? 
         <Grid 
           gridState={gridState}
-          rows={rows}
-          cols={cols}
         />:
         null  
       }
