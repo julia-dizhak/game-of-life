@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import Game from './Game';
-import reducer from './reducer';
 
-const store = createStore(reducer);
+import { Provider } from 'react-redux';
+import { store } from './store/';
+
+import Game from './Game';
 
 render(
   <Provider store={store}>

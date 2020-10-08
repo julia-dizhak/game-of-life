@@ -1,13 +1,28 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
+
 import { Grid } from './components/Grid'
 import './game.css';
 
 function Game(props) {
+  // todo optimize useSelector
+  const gridState = useSelector(state => state.gridState);
+  const rows = useSelector(state => state.rows);
+  const cols = useSelector(state => state.cols);
+
   return (
     <div className="container">
       <h1 className="title">Conway's Game of Life</h1>
-      <Grid />
+
+      {gridState.length > 0 ? 
+        <Grid 
+          gridState={gridState}
+          rows={rows}
+          cols={cols}
+        />:
+        null  
+      }
+      
       {/* display generation
       controls */}
       <button type="button">stop</button>
