@@ -4,7 +4,7 @@
 > Archlet fullstack developer coding challenge.
 
 ## Demo
-Hosted on GitHub Pages, [demo](https://julia-dizhak.github.io/game-of-life/)
+[demo](https://julia-dizhak.github.io/game-of-life/) hosted on Github Pages. 
 
 ## The Challenge
 
