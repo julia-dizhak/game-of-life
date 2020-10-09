@@ -21,8 +21,9 @@ export const countTotalAmountAliveNeighbors = (grid, row, col) => {
     const y = col + neighbor[1];
 
     const isOnEdge = (x >= 0 && x < rows && y >= 0 && y < cols);
-    // todo check if i need to really calculate all neighbors
-    if (isOnEdge && grid[x][y]) {
+    // No need to count more than 4 alive neighbors because it will be 
+    // overpopulated cases
+    if (amount < 4 && isOnEdge && grid[x][y]) {
       return amount + 1;
     } else {
       return amount;

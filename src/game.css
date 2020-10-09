@@ -29,7 +29,7 @@ Styles for grid
 */
 .grid {
   width: 80%;
-  margin: 0 auto 30px;
+  margin: 0 auto 15px;
   border: 1px solid #ccc;
 }
 
@@ -43,10 +43,9 @@ Styles for grid
 
 .col {
   flex-direction: column;
-  height: 10px;
   width: calc(100% / 10);
   height: calc(100%);
-  box-shadow: 0 0 0 0.1px #000 inset;
+  box-shadow: inset 0 0 0 0.1px #000;
 }
 
 .alive {

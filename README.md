@@ -4,7 +4,7 @@
 > Archlet fullstack developer coding challenge.
 
 ## Demo
-[demo](https://julia-dizhak.github.io/game-of-life/) hosted on Github Pages. 
+[Demo](https://julia-dizhak.github.io/game-of-life/) hosted on Github Pages. 
 
 ## The Challenge
 
@@ -31,8 +31,8 @@ The Game of Life has this name because of Conway's genetic laws, rules which cel
 _In my implementation cell = 0 means death, cell = 1 means life_
 
 The rules are: 
-* the cell = 0 becomes 1 (a live) when it has 3 life neighbours, otherwise it stays 0
-* the cell = 1 dies when it has less than 2 lives (underpopulation) and greater than 3 lives (overpopulation), otherwise it stays 1
+* the cell = false becomes true (alive) when it has 3 life neighbours, otherwise it stays false
+* the cell = true dies (false) when it has less than 2 lives (underpopulation) and greater than 3 lives (overpopulation), otherwise it stays true
 
 So reproduction happens with exactly 3 neighbors, death happens with < 2, > 3 neighbours
 
