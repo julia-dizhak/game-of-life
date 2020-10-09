@@ -36,7 +36,35 @@ The rules are:
 
 So reproduction happens with exactly 3 neighbors, death happens with < 2, > 3 neighbours
 
-## Implementation details
+## Run an App
+To run an app in development mode. Open http://localhost:3000 to view it in the browser.
+
+```sh
+npm start
+```
+
+Runs the test watcher in an interactive mode.
+By default, runs tests related to files changed since the last commit.
+
+```sh
+npm run test
+```
+
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+```sh
+npm run build
+```
+
+Deploy on github-pages and app is ready to be deployed.
+
+```sh
+npm run predeploy
+npm run deploy
+```
+
+## Designing a game
 
 * **Step** 1 Starter code
 Initial state: first I need to create a 2 dimensional array that stores a random collection of 1 and 0.
@@ -51,3 +79,17 @@ The idea to keep 2 states old (previous) and new one (next state) for each cell.
 And based on the previous state of the cell itself and his 8 neighbors state, update state if it's needed or stay like it was (need to think about performance).
 
 So I have to count neighbors, check edge cases for the grid and implement the rules which I described.
+
+### Technologies
+
+* React
+* Redux (it is not necessary for this game to use Redux, but it is a requirement)
+* HTML, CSS
+
+### Todo
+A simple implementation of Conway's Game of Life using ReactJS framework
+
+* Customize configuration: speed, number of rows and cols
+* Provide a possibility to customize color for alive/dead cells
+* Display a message on UI where generation becomes stable after some amount of steps
+
