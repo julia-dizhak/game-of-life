@@ -47,11 +47,16 @@ describe('defineNextGeneration test case', () => {
       [false, false, false]
     ];
 
-    // todo check test case
-    //expect(defineNextGeneration(prevState)).toEqual(nextState);
+    const nextState2 = [
+      [false, true, false],
+      [false, false, true],
+      [false, false, false]
+    ];
+
+    expect(defineNextGeneration(prevState)).toEqual(nextState2);
   });
 
-  it('gird of 4 (example from wiki)', () => {
+  it('gird of 4 (examples from wiki)', () => {
     const prevState = [
       [false, false, false, false],
       [false, true, true, false],
@@ -64,7 +69,7 @@ describe('defineNextGeneration test case', () => {
       [false, true, false, false],
       [false, false, false, false]
     ];
-    const nextState = prevState.slice();
+    const nextState = prevState.slice(); // todo here slice is okay?
 
     expect(defineNextGeneration(prevState)).toEqual(nextState);
     expect(defineNextGeneration(prevState1)).toEqual(nextState);

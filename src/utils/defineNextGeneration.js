@@ -1,7 +1,6 @@
 import { countTotalAmountAliveNeighbors } from './countTotalAmountAliveNeighbors';
 
 /**
- * todo
  * Returns nextState based on initState based on specific rules below
  * 
  * The rules are:
@@ -19,14 +18,13 @@ import { countTotalAmountAliveNeighbors } from './countTotalAmountAliveNeighbors
  */
 
 export const defineNextGeneration = function(initState) {
-  const nextState = initState.slice();
-
-  const rows = initState.length;
-  const cols = initState[0].length;
+  const nextState = JSON.parse(JSON.stringify(initState));
+  const rows = nextState.length;
+  const cols = nextState[0].length;
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      const totalAliveNeighbors = countTotalAmountAliveNeighbors(initState,i,j);
+      const totalAliveNeighbors = countTotalAmountAliveNeighbors(initState, i, j);
       const alive = initState[i][j] ? true : false;
 
       if (alive) {

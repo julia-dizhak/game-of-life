@@ -1,6 +1,4 @@
 import React from 'react';
-import uuid1 from 'uuid/v1';
-
 import { Square } from './Square';
 
 /* 
@@ -16,14 +14,14 @@ const Grid = ({gridState}) => {
     for (let j = 0; j < c; j++) {
       cols.push(
         <Square 
-          key={uuid1() + `${r},${c}`}
+          key={`${i},${j}`}
           className={`col ${gridState[i][j] ? 'alive' : 'dead'}`}
         />
       )
     }
     rows.push(
       <div 
-        key={uuid1() + `${r}`}
+        key={`${i}`}
         className="row"
         >
           {cols}
