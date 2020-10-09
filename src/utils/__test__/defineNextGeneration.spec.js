@@ -69,7 +69,7 @@ describe('defineNextGeneration test case', () => {
       [false, true, false, false],
       [false, false, false, false]
     ];
-    const nextState = prevState.slice(); // todo here slice is okay?
+    const nextState = prevState.slice(); 
 
     expect(defineNextGeneration(prevState)).toEqual(nextState);
     expect(defineNextGeneration(prevState1)).toEqual(nextState);

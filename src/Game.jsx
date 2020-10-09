@@ -1,22 +1,49 @@
 import React, { useEffect } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
+import { connect, useSelector, useDispatch, shallowEqual } from 'react-redux';
 
-import { 
-  BOOTSTRAP_APP, 
-  INIT_NEW_GENERATION, HANDLE_NEXT_GENERATION } from './store/reducer';
+import allActionsTypes from './store/action-types';
 import { Grid } from './components/Grid'
 import './game.css';
 
-function Game(props) {
-  // todo optimize useSelector
-  const gridState = useSelector(state => state.gridState);
-  const isRunning = useSelector(state => state.isRunning);
-  const generation = useSelector(state => state.generation);
+function Game() {
+  const { gridState, generation, isRunning, speed } = useSelector(state => ({
+    gridState: state.gridState,
+    generation: state.generation,
+    isRunning: state.isRunning,
+    speed: state.speed
+  }), shallowEqual);
 
   const dispatch = useDispatch();
-  useEffect(()=> {
-    dispatch({type: BOOTSTRAP_APP})
+  useEffect(() => {
+    dispatch({ type: allActionsTypes.BOOTSTRAP_APP })
   }, []);
+
+  useEffect(() => {
+    let id;
+
+    if (isRunning) {
+      id = setInterval(() => {
+        dispatch({type: allActionsTypes.HANDLE_NEXT_GENERATION})
+      }, speed);
+    }
+
+    if (!isRunning) {
+      clearInterval(id);
+    }
+    return () => clearInterval(id);
+
+  }, [isRunning, speed]);
+
+  const renderUpperControls = (isRunning) => {
+    return isRunning ? 
+      <button 
+        type="button" 
+        onClick={() => dispatch({type: allActionsTypes.HANDLE_STOP})}>Stop</button> 
+      :
+      <button 
+        type="button" 
+        onClick={() => dispatch({type: allActionsTypes.HANDLE_RUN})}>Start</button>;
+  }
 
   return (
     <div className="container">
@@ -29,24 +56,30 @@ function Game(props) {
         null  
       }
 
-      <div className="controls">
+      <div className="generation">
         <p>{`Generation: ${generation}`}</p>
-        <button type="button">stop</button>
-        <button type="button">start</button>
+      </div>  
 
-        <button 
-          type="button" 
-          disabled={isRunning} 
-          onClick={() => dispatch({type: HANDLE_NEXT_GENERATION})}>
-            Next generation in one step
-        </button>
-        
-        <button 
-          type="button" 
-          disabled={isRunning} 
-          onClick={() => dispatch({type: INIT_NEW_GENERATION})}>
-            Init new generation
-        </button>
+      <div className="controls">
+        <div className="upper-controls">
+          {renderUpperControls(isRunning)}
+        </div>
+
+        <div className="bottom-controls">
+          <button 
+            type="button" 
+            disabled={isRunning} 
+            onClick={() => dispatch({type: allActionsTypes.HANDLE_NEXT_GENERATION})}>
+              Next generation in one step
+          </button>
+          
+          <button 
+            type="button" 
+            disabled={isRunning} 
+            onClick={() => dispatch({type: allActionsTypes.INIT_NEW_GENERATION})}>
+              Init new generation
+          </button>
+        </div>  
       </div>
     </div>
   );

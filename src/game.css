@@ -56,3 +56,27 @@ Styles for grid
 .dead {
   background-color: #483636;
 }
+
+/* controls */
+.controls {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+.upper-controls {
+  margin: 0 auto 15px;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button[disabled] {
+  pointer-events: auto! important;
+  cursor: not-allowed! important;
+}
+
+.bottom-controls button {
+  margin: 0 15px 0 0;
+}

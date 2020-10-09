@@ -2,7 +2,7 @@ import React from 'react';
 import { Square } from './Square';
 
 /* 
-  build a grid via rows and cols
+* Build a grid via rows and cols
 */
 const Grid = ({gridState}) => {
   let rows = [];

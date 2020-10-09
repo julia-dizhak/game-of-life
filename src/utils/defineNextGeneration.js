@@ -32,7 +32,7 @@ export const defineNextGeneration = function(initState) {
           nextState[i][j] = false;
         }
       } else {
-        if (totalAliveNeighbors == 3) nextState[i][j] = true;
+        if (totalAliveNeighbors === 3) nextState[i][j] = true;
       }
     }
   }
