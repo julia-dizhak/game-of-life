@@ -14,7 +14,7 @@ export const countTotalAmountAliveNeighbors = (grid, row, col) => {
   const neighbors = [
     [1,0], [-1,0], [0,1], [0,-1], // horizontally, vertically
     [-1, -1], [-1, 1], [1, 1], [1, -1] // diagonally adjacent
-  ]
+  ];
   
   return neighbors.reduce((amount, neighbor) => {
     const x = row + neighbor[0];

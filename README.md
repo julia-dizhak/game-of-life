@@ -18,6 +18,7 @@ Please also write an imaginary todo list in this repository of what could be cha
 
 If you want to, then you could also implement unit tests and try to make it as performance as possible - fancy optimization tricks - let your mind free.
 
+
 ## Conway's Game of Life (description and rules)
 
 It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. 
@@ -28,7 +29,7 @@ _But for simplicity, I use data structure as two-dimensional array with finite n
 
 The Game of Life has this name because of Conway's genetic laws, rules which cells should follow. Every cell interacts with its 8 neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. 
 
-_In my implementation cell = 0 means death, cell = 1 means life_
+_In my implementation cell = false means death, cell = true means life_
 
 The rules are: 
 * the cell = false becomes true (alive) when it has 3 life neighbours, otherwise it stays false
@@ -36,7 +37,8 @@ The rules are:
 
 So reproduction happens with exactly 3 neighbors, death happens with < 2, > 3 neighbours
 
-## Run an App
+
+## Run an app
 To run an app in development mode. Open http://localhost:3000 to view it in the browser.
 
 ```sh
@@ -57,7 +59,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 npm run build
 ```
 
-Deploy on github-pages and app is ready to be deployed.
+Deploy on github-pages.
 
 ```sh
 npm run predeploy
@@ -82,14 +84,14 @@ So I have to count neighbors, check edge cases for the grid and implement the ru
 
 ### Technologies
 
-* React
+* React (with Hooks)
 * Redux (it is not necessary for this game to use Redux, but it is a requirement)
+* Jest
 * HTML, CSS
 
 ### Todo
-A simple implementation of Conway's Game of Life using ReactJS framework
+Below are potential features and improvements
 
 * Customize configuration: speed, number of rows and cols
 * Provide a possibility to customize color for alive/dead cells
 * Display a message on UI where generation becomes stable after some amount of steps
-

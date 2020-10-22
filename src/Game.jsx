@@ -5,7 +5,7 @@ import allActionsTypes from './store/action-types';
 import { Grid } from './components/Grid'
 import './game.css';
 
-function Game() {
+export default function Game() {
   const { gridState, generation, isRunning, speed } = useSelector(state => ({
     gridState: state.gridState,
     generation: state.generation,
@@ -14,9 +14,10 @@ function Game() {
   }), shallowEqual);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch({ type: allActionsTypes.BOOTSTRAP_APP })
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     let id;
@@ -32,7 +33,7 @@ function Game() {
     }
     return () => clearInterval(id);
 
-  }, [isRunning, speed]);
+  }, [dispatch, isRunning, speed]);
 
   const renderUpperControls = (isRunning) => {
     return isRunning ? 
@@ -84,13 +85,3 @@ function Game() {
     </div>
   );
 }
-
-function mapStateToProps(state) {
-  return {
-    hello: state.hello,
-  };
-}
-
-const ConnectedApp = connect(mapStateToProps)(Game);
-
-export default ConnectedApp;

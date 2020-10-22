@@ -14,7 +14,6 @@ function make2DArray(rows, cols, fill = () => Math.random() < 0.3) {
     for (let j = 0; j < cols; j++) {
       arr[i][j] = fill();
     }
-    
   }
 
   return arr;
